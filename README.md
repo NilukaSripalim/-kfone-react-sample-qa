@@ -1,70 +1,69 @@
-# Getting Started with Create React App
+<p align="center" style="padding-top: 20px">
+  <h1 align="center">Asgardeo Integrations</h1>
+  <p align="center">Repo containing sample apps covering <a href="https://wso2.com/asgardeo/">Asgardeo</a> Integration use-cases.</p>
+</p>
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+<div align="center">
 
-## Available Scripts
+  <a href="">[![👷 PR Builder](https://github.com/brionmario/asgardeo-integrations/actions/workflows/pr-builder.yml/badge.svg)](https://github.com/brionmario/asgardeo-integrations/actions/workflows/pr-builder.yml)</a>
+  <a href="">[![🚀 Deploy to Firebase](https://github.com/brionmario/asgardeo-integrations/actions/workflows/firebase-deploy.yml/badge.svg)](https://github.com/brionmario/asgardeo-integrations/actions/workflows/firebase-deploy.yml)</a>
 
-In the project directory, you can run:
+</div>
 
-### `npm start`
+## App Index
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in your browser.
+|  App          | Access URL    |
+| :------------ |:------------- |
+| Happy Pets    | https://happy-pets-demo.web.app |
+| Netflix    | https://nflx-demo.web.app |
+| Drogo NFT    | https://drogo-nft-demo.web.app |
 
-The page will reload when you make changes.\
-You may also see any lint errors in the console.
+## Prerequisites
 
-### `npm test`
+1. Install NodeJS from [https://nodejs.org/en/download/](https://nodejs.org/en/download/).
+2. Yarn
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+```shell
+npm install -g yarn
+```
 
-### `npm run build`
+## Setup
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
+### Install Packages
 
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
+```shell
+yarn
+```
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
+### Build the Mono-repo
 
-### `npm run eject`
+```shell
+yarn build
+```
 
-**Note: this is a one-way operation. Once you `eject`, you can't go back!**
+## Apps
 
-If you aren't satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
+### Netflix
 
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you're on your own.
+```shell
+cd apps/netflix
+yarn start
+```
 
-You don't have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn't feel obligated to use this feature. However we understand that this tool wouldn't be useful if you couldn't customize it when you are ready for it.
+### Happy Pets
 
-## Learn More
+```shell
+cd apps/happy-pets
+yarn start
+```
 
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
+### Drogo NFT
 
-To learn React, check out the [React documentation](https://reactjs.org/).
+```shell
+cd apps/drogo-nft
+yarn start
+```
 
-### Code Splitting
+## Contributing
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
-
-### Analyzing the Bundle Size
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
-
-### Making a Progressive Web App
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
-
-### Advanced Configuration
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
-
-### Deployment
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
-
-### `npm run build` fails to minify
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
+If you would like to contribute to the project by adding new integration apps, follow the [CONTRIBUTING](./CONTRIBUTING.md) guide.

@@ -1,0 +1,19 @@
+{
+  "hosting": [
+    {
+      "target": "happy-pets",
+      "public": "apps/happy-pets/build",
+      "ignore": [
+        "firebase.json",
+        "**/.*",
+        "**/node_modules/**"
+      ],
+      "rewrites": [
+        {
+          "source": "**",
+          "destination": "/index.html"
+        }
+      ]
+    }
+  ]
+}
