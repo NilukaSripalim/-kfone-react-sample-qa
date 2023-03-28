@@ -21,6 +21,7 @@ import Catalog from './components/Catalog/Catalog.js';
 import MyCart from './components/MyCart/Cart.js';
 import Admin from './components/Admin/Admin.js';
 
+// Component to render the login/logout menu
 
 const RightLoginSignupMenu = () => {
   const { state, signIn, signOut, userInfo , groups,getBasicUserInfo } = useAuthContext();
