@@ -1,0 +1,23 @@
+[
+{
+      "Name": "Apple iPhone 13",
+      "Price": 799,
+      "Description": "The iPhone 13 features a 6.1-inch Super Retina XDR display, A15 Bionic chip, 5G connectivity, and a dual-camera system with night mode.",
+      "Manufacturer": "Apple",
+      "Image":"https://www.apple.com/newsroom/images/product/iphone/standard/Apple_iphone13_hero_09142021_inline.jpg.large_2x.jpg"
+    },
+    {
+      "Name": "Samsung Galaxy S21 Ultra",
+      "Price": 1199,
+      "Description": "The Galaxy S21 Ultra features a 6.8-inch Dynamic AMOLED 2X display, Snapdragon 888 processor, 5G connectivity, and a quad-camera system with 100x Space Zoom.",
+      "Manufacturer": "Samsung",
+      "Image":"https://m.media-amazon.com/images/I/81ZOucfnADL._AC_SL1500_.jpg"
+    },
+    {
+      "Name": "Google Pixel 6 Pro",
+      "Price": 899,
+      "Description": "The Pixel 6 Pro features a 6.7-inch OLED display, Google Tensor chip, 5G connectivity, and a triple-camera system with 4x optical zoom.",
+      "Manufacturer": "Google",
+      "Image":"https://www.att.com/idpassets/global/devices/phones/google/google-pixel-6-pro/Gallery/Cloudy-White/6074D-6.jpg"
+    }
+  ]
