@@ -21,7 +21,7 @@ import Catalog from './components/Catalog/Catalog.js';
 import MyCart from './components/MyCart/Cart.js';
 import Admin from './components/Admin/Admin.js';
 
-// Component to render the login/signup/logout menu
+// Component to render the login/logout menu
 
 const RightLoginSignupMenu = () => {
   const { state, signIn, signOut, userInfo , groups,getBasicUserInfo } = useAuthContext();
@@ -42,9 +42,6 @@ const RightLoginSignupMenu = () => {
     menu = <>
       <Nav>
       <button onClick={() => signIn()}>Login</button>
-      <button onClick={() => signIn()}>SignUp</button>
-      {/* /* This is a link to the signup page. */
-      <Nav.Link href="#deets">Sign Up</Nav.Link>}
       </Nav>
     </>
   }
