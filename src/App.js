@@ -44,7 +44,7 @@ const RightLoginSignupMenu = () => {
       <button onClick={() => signIn()}>Login</button>
       <button onClick={() => signIn()}>SignUp</button>
       {/* /* This is a link to the signup page. */
-      <Nav.Link href="#deets">Sign Up</Nav.Link> */}
+      <Nav.Link href="#deets">Sign Up</Nav.Link>}
       </Nav>
     </>
   }
