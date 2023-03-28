@@ -32,8 +32,8 @@ const root = ReactDOM.createRoot(document.getElementById('root'));
         config={ {
             signInRedirectURL: "https://localhost:3000",
             signOutRedirectURL: "https://localhost:3000",
-            clientID: "T786uLYlKwEKmtzO7Zv3ojndsTEa",
-            baseUrl: "https://dev.api.asgardeo.io/t/asekatest1",
+            clientID: "HCfqUuf0C0e3DF0ha848_rtDvCca",
+            baseUrl: "https://api.asgardeo.io/t/newprod",
             scope: [ "openid","profile","groups" ]
         } }
         
