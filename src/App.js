@@ -35,18 +35,14 @@ const RightLoginSignupMenu = () => {
   if (state.isAuthenticated) {
     menu =  <>
       <Nav>
-      {/* <Nav.Link href="#deets">Logout</Nav.Link> */}
-         <button onClick={() => signOut()}>Logout</button>
-      <Nav.Link href="#deets"><FontAwesomeIcon icon={faUser} /></Nav.Link></Nav>
-  
-
+      <button onClick={() => signOut()}>Logout</button>
+      <Nav.Link href="#deets"><FontAwesomeIcon icon={faUser} /></Nav.Link>
+      </Nav>
     </>
   } else {
     menu = <>
       <Nav>
       <button className="reg" onClick={() => signIn()}>Login</button>
-     
-      {/* <button onClick={() => signIn()}>SignUp</button> */}
       </Nav>
     </>
   }
@@ -59,7 +55,6 @@ const RightLoginSignupMenu = () => {
 const PetStoreNavAdmin = () => {
   return (
     <>
-    
     <Navbar bg="light" expand="lg">
       <Container>
         <Navbar.Brand href="#home">Kphone</Navbar.Brand>
@@ -216,11 +211,6 @@ function Application() {
         state.isAuthenticated && basicUserDetails?.groups.includes("admin_group") 
           ? (
             <div>
-              <ul>
-                <li>{basicUserDetails?.groups}</li>
-                <li>{JSON.stringify(state)}</li>
-              </ul>
-
               {/* <button onClick={() => signOut()}>Logout</button> */}
               <App/>
             </div>
