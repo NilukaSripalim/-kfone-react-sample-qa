@@ -24,6 +24,7 @@ import Admin from './components/Admin/Admin.js';
 // Component to render the login/signup/logout menu
 
 const RightLoginSignupMenu = () => {
+  const { state, signIn, signOut, userInfo , groups,getBasicUserInfo } = useAuthContext();
   // Based on Asgardeo SDK, set a variable like below to check and conditionally render the menu
   let isLoggedIn = false;
 
@@ -40,8 +41,11 @@ const RightLoginSignupMenu = () => {
   } else {
     menu = <>
       <Nav>
-      <Nav.Link href="#deets">Login</Nav.Link>
-      <Nav.Link href="#deets">Sign Up</Nav.Link></Nav>
+      <button onClick={() => signIn()}>Login</button>
+      <button onClick={() => signIn()}>SignUp</button>
+      {/* /* This is a link to the signup page. */
+      <Nav.Link href="#deets">Sign Up</Nav.Link> */}
+      </Nav>
     </>
   }
   return menu;
@@ -92,6 +96,28 @@ const PetStoreNavCus = () => {
   );
 };
 
+// Component to render the navigation bar customer
+const PetStoreMain = () => {
+  return (
+    <>
+    <Navbar bg="light" expand="lg">
+      <Container>
+        <Navbar.Brand href="#home">PetStore</Navbar.Brand>
+        <Navbar.Toggle aria-controls="basic-navbar-nav" />
+        <Navbar.Collapse id="basic-navbar-nav">
+          <Nav className="me-auto">
+            <Link to="/" className="nav-link">Catalog</Link>
+
+            {/* <Link to="/mycart" className="nav-link">My Cart</Link> */}
+          </Nav>
+        </Navbar.Collapse>
+        <RightLoginSignupMenu />
+      </Container>
+    </Navbar>
+    </>
+  );
+};
+
 // Main app component
 const App = () => {
 // useEffect(() => {
@@ -100,7 +126,7 @@ const App = () => {
   return (
     <>
       <BrowserRouter>
-      <PetStoreNavAdmin />
+      <PetStoreNavAdmin/>
       <Switch>
         <Route exact path="/">
           <Catalog />
@@ -136,6 +162,27 @@ const AppCustomer = () => {
   );
 }
 
+// Main Catalog component
+const AppNav = () => {
+  // useEffect(() => {
+  //   document.title = 'PetStore';
+  // }, []);
+  return (
+    <>
+      <BrowserRouter>
+      <PetStoreMain />
+      <Switch>
+        <Route exact path="/">
+          <Catalog />
+        </Route>
+        {/* <Route path="/mycart">
+          <MyCart />
+        </Route> */}
+      </Switch>
+    </BrowserRouter>
+    </>
+  );
+}
 
 function Application() {
 
@@ -184,7 +231,7 @@ function Application() {
               <button onClick={() => signOut()}>Logout</button>
               <AppCustomer/>
             </div>
-          ):<button onClick={() => signIn()}>Login</button>
+          ):<AppNav/>
 
       }
     </div>
