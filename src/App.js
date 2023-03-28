@@ -21,6 +21,7 @@ import Catalog from './components/Catalog/Catalog.js';
 import MyCart from './components/MyCart/Cart.js';
 import Admin from './components/Admin/Admin.js';
 
+
 // Component to render the login/signup/logout menu
 
 const RightLoginSignupMenu = () => {
@@ -32,24 +33,28 @@ const RightLoginSignupMenu = () => {
   let menu;
 
   // Conditionally render the following two links based on whether the user is logged in or not
-  if (isLoggedIn) {
+  if (state.isAuthenticated) {
     menu =  <>
       <Nav>
-      <Nav.Link href="#deets">Logout</Nav.Link>
+      {/* <Nav.Link href="#deets">Logout</Nav.Link> */}
+         <button onClick={() => signOut()}>Logout</button>
       <Nav.Link href="#deets"><FontAwesomeIcon icon={faUser} /></Nav.Link></Nav>
+  
+
     </>
   } else {
     menu = <>
       <Nav>
-      <button onClick={() => signIn()}>Login</button>
-      <button onClick={() => signIn()}>SignUp</button>
-      {/* /* This is a link to the signup page. */
-      <Nav.Link href="#deets">Sign Up</Nav.Link> */}
+      <button className="reg" onClick={() => signIn()}>Login</button>
+     
+      {/* <button onClick={() => signIn()}>SignUp</button> */}
       </Nav>
     </>
   }
   return menu;
 }
+
+
 
 // Component to render the navigation bar Admin
 const PetStoreNavAdmin = () => {
@@ -58,7 +63,7 @@ const PetStoreNavAdmin = () => {
     
     <Navbar bg="light" expand="lg">
       <Container>
-        <Navbar.Brand href="#home">PetStore</Navbar.Brand>
+        <Navbar.Brand href="#home">Kphone</Navbar.Brand>
         <Navbar.Toggle aria-controls="basic-navbar-nav" />
         <Navbar.Collapse id="basic-navbar-nav">
           <Nav className="me-auto">
@@ -80,7 +85,7 @@ const PetStoreNavCus = () => {
     <>
     <Navbar bg="light" expand="lg">
       <Container>
-        <Navbar.Brand href="#home">PetStore</Navbar.Brand>
+        <Navbar.Brand href="#home">Kphone</Navbar.Brand>
         <Navbar.Toggle aria-controls="basic-navbar-nav" />
         <Navbar.Collapse id="basic-navbar-nav">
           <Nav className="me-auto">
@@ -102,11 +107,11 @@ const PetStoreMain = () => {
     <>
     <Navbar bg="light" expand="lg">
       <Container>
-        <Navbar.Brand href="#home">PetStore</Navbar.Brand>
+        <Navbar.Brand href="#home">Kphone</Navbar.Brand>
         <Navbar.Toggle aria-controls="basic-navbar-nav" />
         <Navbar.Collapse id="basic-navbar-nav">
           <Nav className="me-auto">
-            <Link to="/" className="nav-link">Catalog</Link>
+            {/* <Link to="/" className="nav-link">Catalog</Link> */}
 
             {/* <Link to="/mycart" className="nav-link">My Cart</Link> */}
           </Nav>
@@ -172,9 +177,9 @@ const AppNav = () => {
       <BrowserRouter>
       <PetStoreMain />
       <Switch>
-        <Route exact path="/">
+        {/* <Route exact path="/"> */}
           <Catalog />
-        </Route>
+        {/* </Route> */}
         {/* <Route path="/mycart">
           <MyCart />
         </Route> */}
@@ -217,7 +222,7 @@ function Application() {
                 <li>{JSON.stringify(state)}</li>
               </ul>
 
-              <button onClick={() => signOut()}>Logout</button>
+              {/* <button onClick={() => signOut()}>Logout</button> */}
               <App/>
             </div>
           ):
@@ -228,7 +233,7 @@ function Application() {
                 <li>{JSON.stringify(state)}</li>
               </ul>
 
-              <button onClick={() => signOut()}>Logout</button>
+              {/* <button onClick={() => signOut()}>Logout</button> */}
               <AppCustomer/>
             </div>
           ):<AppNav/>
