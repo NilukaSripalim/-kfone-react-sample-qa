@@ -22,8 +22,6 @@ import MyCart from './components/MyCart/Cart.js';
 import Admin from './components/Admin/Admin.js';
 
 
-// Component to render the login/signup/logout menu
-
 const RightLoginSignupMenu = () => {
   const { state, signIn, signOut, userInfo , groups,getBasicUserInfo } = useAuthContext();
   // Based on Asgardeo SDK, set a variable like below to check and conditionally render the menu
