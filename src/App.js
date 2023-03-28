@@ -47,8 +47,31 @@ const RightLoginSignupMenu = () => {
   return menu;
 }
 
-// Component to render the navigation bar
-const PetStoreNav = () => {
+// Component to render the navigation bar Admin
+const PetStoreNavAdmin = () => {
+  return (
+    <>
+    
+    <Navbar bg="light" expand="lg">
+      <Container>
+        <Navbar.Brand href="#home">PetStore</Navbar.Brand>
+        <Navbar.Toggle aria-controls="basic-navbar-nav" />
+        <Navbar.Collapse id="basic-navbar-nav">
+          <Nav className="me-auto">
+            <Link to="/" className="nav-link">Catalog</Link>
+
+            <Link to="/admin" className="nav-link">Admin</Link>
+          </Nav>
+        </Navbar.Collapse>
+        <RightLoginSignupMenu />
+      </Container>
+    </Navbar>
+    </>
+  );
+};
+
+// Component to render the navigation bar customer
+const PetStoreNavCus = () => {
   return (
     <>
     <Navbar bg="light" expand="lg">
@@ -58,8 +81,8 @@ const PetStoreNav = () => {
         <Navbar.Collapse id="basic-navbar-nav">
           <Nav className="me-auto">
             <Link to="/" className="nav-link">Catalog</Link>
+
             <Link to="/mycart" className="nav-link">My Cart</Link>
-            <Link to="/admin" className="nav-link">Admin</Link>
           </Nav>
         </Navbar.Collapse>
         <RightLoginSignupMenu />
@@ -77,13 +100,10 @@ const App = () => {
   return (
     <>
       <BrowserRouter>
-      <PetStoreNav />
+      <PetStoreNavAdmin />
       <Switch>
         <Route exact path="/">
           <Catalog />
-        </Route>
-        <Route path="/mycart">
-          <MyCart />
         </Route>
         <Route path="/admin">
           <Admin />
@@ -95,23 +115,20 @@ const App = () => {
 }
 
 // Main app component
-const AppAdmin = () => {
+const AppCustomer = () => {
   // useEffect(() => {
   //   document.title = 'PetStore';
   // }, []);
   return (
     <>
       <BrowserRouter>
-      <PetStoreNav />
+      <PetStoreNavCus />
       <Switch>
         <Route exact path="/">
           <Catalog />
         </Route>
         <Route path="/mycart">
           <MyCart />
-        </Route>
-        <Route path="/admin">
-          <Admin />
         </Route>
       </Switch>
     </BrowserRouter>
@@ -145,20 +162,30 @@ function Application() {
   return (
     <div className="App">
       {
-        state.isAuthenticated 
+        state.isAuthenticated && basicUserDetails?.groups.includes("admin_group") 
           ? (
             <div>
               <ul>
                 <li>{basicUserDetails?.groups}</li>
-                 {/* <li>{basicUserDetails.groups}</li>  */}
                 <li>{JSON.stringify(state)}</li>
               </ul>
 
               <button onClick={() => signOut()}>Logout</button>
               <App/>
             </div>
-          )
-          : <button onClick={() => signIn()}>Login</button>
+          ):
+          state.isAuthenticated ?
+          (
+            <div>
+              <ul>
+                <li>{JSON.stringify(state)}</li>
+              </ul>
+
+              <button onClick={() => signOut()}>Logout</button>
+              <AppCustomer/>
+            </div>
+          ):<button onClick={() => signIn()}>Login</button>
+
       }
     </div>
   );
