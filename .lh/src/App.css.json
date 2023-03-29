@@ -1,0 +1,18 @@
+{
+    "sourceFile": "src/App.css",
+    "activeCommit": 0,
+    "commits": [
+        {
+            "activePatchIndex": 0,
+            "patches": [
+                {
+                    "date": 1680065412857,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n"
+                }
+            ],
+            "date": 1680065412857,
+            "name": "Commit-0",
+            "content": "/*\n *   Copyright (c) 2023 WSO2 Inc. (http://www.wso2.org)\n *   All rights reserved.\n *   \n *   This software is the property of WSO2 Inc. and its suppliers, if any.\n *   Dissemination of any information or reproduction of any material contained\n *   herein in any form is strictly forbidden, unless permitted by WSO2 expressly.\n *   You may not alter or remove any copyright or other notice from copies of this content.\n */\n.App {\n  text-align: center;\n}\n\n.App-logo {\n  height: 40vmin;\n  pointer-events: none;\n}\n\n.btn{\n  margin: 2px;;\n}\n\n@media (prefers-reduced-motion: no-preference) {\n  .App-logo {\n    animation: App-logo-spin infinite 20s linear;\n  }\n}\n\n.App-header {\n  background-color: #282c34;\n  min-height: 100vh;\n  display: flex;\n  flex-direction: column;\n  align-items: center;\n  justify-content: center;\n  font-size: calc(10px + 2vmin);\n  color: white;\n}\n\n.reg {\n  color: white;\n  background-color: rgba(104, 85, 224, 1);\n  min-width: 15vh;\n  min-height: 5vh;\n  border-radius: 4px;\n}\n\n\n.App-link {\n  color: #61dafb;\n}\n\n@keyframes App-logo-spin {\n  from {\n    transform: rotate(0deg);\n  }\n  to {\n    transform: rotate(360deg);\n  }\n}\n"
+        }
+    ]
+}

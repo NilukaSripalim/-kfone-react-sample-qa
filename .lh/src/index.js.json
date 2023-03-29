@@ -1,0 +1,34 @@
+{
+    "sourceFile": "src/index.js",
+    "activeCommit": 0,
+    "commits": [
+        {
+            "activePatchIndex": 4,
+            "patches": [
+                {
+                    "date": 1680030140237,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n"
+                },
+                {
+                    "date": 1680031005918,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -12,10 +12,10 @@\n import './index.css';\n import Application from './App';\n import reportWebVitals from './reportWebVitals';\n import { AuthProvider } from \"@asgardeo/auth-react\";\n+import '../node_modules/bootstrap/dist/css/bootstrap.min.css';\n \n-\n const root = ReactDOM.createRoot(document.getElementById('root'));\n \n // const authConfig = {\n //     signInRedirectURL: \"https://localhost:3000\",\n"
+                },
+                {
+                    "date": 1680067015268,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -31,9 +31,9 @@\n     <AuthProvider\n         config={ {\n             signInRedirectURL: \"https://localhost:3000\",\n             signOutRedirectURL: \"https://localhost:3000\",\n-            clientID: \"jYSWP821dojVDf0OVKVwN9qxJKca\",\n+            clientID: \"1RvRFXUgf97lmXWOBVH9dqI5RjMa\",\n             baseUrl: \"https://api.asgardeo.io/t/orgkfonereact\",\n             scope: [ \"openid\",\"profile\",\"groups\" ]\n         } }\n         \n"
+                },
+                {
+                    "date": 1680067127946,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -31,9 +31,9 @@\n     <AuthProvider\n         config={ {\n             signInRedirectURL: \"https://localhost:3000\",\n             signOutRedirectURL: \"https://localhost:3000\",\n-            clientID: \"1RvRFXUgf97lmXWOBVH9dqI5RjMa\",\n+            clientID: \"jYSWP821dojVDf0OVKVwN9qxJKca\",\n             baseUrl: \"https://api.asgardeo.io/t/orgkfonereact\",\n             scope: [ \"openid\",\"profile\",\"groups\" ]\n         } }\n         \n"
+                },
+                {
+                    "date": 1680067224804,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -31,9 +31,9 @@\n     <AuthProvider\n         config={ {\n             signInRedirectURL: \"https://localhost:3000\",\n             signOutRedirectURL: \"https://localhost:3000\",\n-            clientID: \"jYSWP821dojVDf0OVKVwN9qxJKca\",\n+            clientID: \"1RvRFXUgf97lmXWOBVH9dqI5RjMa\",\n             baseUrl: \"https://api.asgardeo.io/t/orgkfonereact\",\n             scope: [ \"openid\",\"profile\",\"groups\" ]\n         } }\n         \n"
+                }
+            ],
+            "date": 1680030140237,
+            "name": "Commit-0",
+            "content": "/*\n *   Copyright (c) 2023 WSO2 Inc. (http://www.wso2.org)\n *   All rights reserved.\n *   \n *   This software is the property of WSO2 Inc. and its suppliers, if any.\n *   Dissemination of any information or reproduction of any material contained\n *   herein in any form is strictly forbidden, unless permitted by WSO2 expressly.\n *   You may not alter or remove any copyright or other notice from copies of this content.\n */\nimport React  from 'react';\nimport ReactDOM from 'react-dom/client';\nimport './index.css';\nimport Application from './App';\nimport reportWebVitals from './reportWebVitals';\nimport { AuthProvider } from \"@asgardeo/auth-react\";\n\n\nconst root = ReactDOM.createRoot(document.getElementById('root'));\n\n// const authConfig = {\n//     signInRedirectURL: \"https://localhost:3000\",\n//             signOutRedirectURL: \"https://localhost:3000\",\n//             clientID: \"T786uLYlKwEKmtzO7Zv3ojndsTEa\",\n//             baseUrl: \"https://dev.api.asgardeo.io/t/asekatest1\",\n//             scope: [ \"openid\",\"profile\" ]\n//   };\n  \n  //const auth = new AuthProvider(authConfig);\n\n  const Index = () => (\n    <AuthProvider\n        config={ {\n            signInRedirectURL: \"https://localhost:3000\",\n            signOutRedirectURL: \"https://localhost:3000\",\n            clientID: \"jYSWP821dojVDf0OVKVwN9qxJKca\",\n            baseUrl: \"https://api.asgardeo.io/t/orgkfonereact\",\n            scope: [ \"openid\",\"profile\",\"groups\" ]\n        } }\n        \n    >\n      <Application />  { /* Rest of your application.  */ }\n     \n    </AuthProvider>\n);\n\n  root.render(\n    <Index/>\n  );\n  \n  \n\n// If you want to start measuring performance in your app, pass a function\n// to log results (for example: reportWebVitals(console.log))\n// or send to an analytics endpoint. Learn more: https://bit.ly/CRA-vitals\nreportWebVitals();\n"
+        }
+    ]
+}

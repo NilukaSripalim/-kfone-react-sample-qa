@@ -1,0 +1,18 @@
+{
+    "sourceFile": "src/api/devices.js",
+    "activeCommit": 0,
+    "commits": [
+        {
+            "activePatchIndex": 0,
+            "patches": [
+                {
+                    "date": 1680029433103,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n"
+                }
+            ],
+            "date": 1680029433103,
+            "name": "Commit-0",
+            "content": "/*\n *   Copyright (c) 2023 WSO2 LLC. (http://www.wso2.org)\n *   All rights reserved.\n *   \n *   This software is the property of WSO2 LLC. and its suppliers, if any.\n *   Dissemination of any information or reproduction of any material contained\n *   herein in any form is strictly forbidden, unless permitted by WSO2 expressly.\n *   You may not alter or remove any copyright or other notice from copies of this content.\n */\nimport {AsgardeoSPAClient} from '@asgardeo/auth-react';\nimport endpointConfig from '../configs/endpoint-config';\n\nconst request = requestConfig =>\n  AsgardeoSPAClient.getInstance()\n    .httpRequest(requestConfig)\n    .then(response => response)\n    .catch(error => error);\n\n/**\n * Fetches the list of devices using the REST API.\n *\n * @async\n * @function\n * @returns {Promise<Object>} Devices response.\n * @throws {Error} If the API request fails.\n */\nexport async function fetchDevices() {\n  const endpoint = `${endpointConfig.api.endpoints.devices}`;\n\n  try {\n    const response = await request({\n      method: 'get',\n      url: endpoint,\n      headers: {\n        'Content-Type': 'application/json',\n        \"Authorization\": `Bearer ${endpointConfig.api.choreoAccessToken}`\n      },\n    });\n\n    return response.data;\n  } catch (error) {\n    throw new Error('Failed to fetch the devices');\n  }\n}\n"
+        }
+    ]
+}

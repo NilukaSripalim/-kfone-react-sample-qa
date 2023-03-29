@@ -13,7 +13,7 @@ import './index.css';
 import Application from './App';
 import reportWebVitals from './reportWebVitals';
 import { AuthProvider } from "@asgardeo/auth-react";
-
+import '../node_modules/bootstrap/dist/css/bootstrap.min.css';
 
 const root = ReactDOM.createRoot(document.getElementById('root'));
 
@@ -32,8 +32,8 @@ const root = ReactDOM.createRoot(document.getElementById('root'));
         config={ {
             signInRedirectURL: "https://localhost:3000",
             signOutRedirectURL: "https://localhost:3000",
-            clientID: "HCfqUuf0C0e3DF0ha848_rtDvCca",
-            baseUrl: "https://api.asgardeo.io/t/newprod",
+            clientID: "1RvRFXUgf97lmXWOBVH9dqI5RjMa",
+            baseUrl: "https://api.asgardeo.io/t/orgkfonereact",
             scope: [ "openid","profile","groups" ]
         } }
         
