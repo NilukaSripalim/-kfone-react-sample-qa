@@ -1,193 +1,102 @@
-/*
- *   Copyright (c) 2023 WSO2 Inc. (http://www.wso2.org)
- *   All rights reserved.
- *   
- *   This software is the property of WSO2 Inc. and its suppliers, if any.
- *   Dissemination of any information or reproduction of any material contained
- *   herein in any form is strictly forbidden, unless permitted by WSO2 expressly.
- *   You may not alter or remove any copyright or other notice from copies of this content.
- */
-import React, { useEffect, useState } from 'react';
-import { Container, Button, Table } from 'react-bootstrap';
-import {
-    MDBContainer,
-    MDBRow,
-    MDBCol,
-    MDBCard,
-    MDBCardBody,
-    MDBCardImage,
-    MDBIcon,
-    MDBBtn,
-    MDBInput,
-    MDBTypography,
-    MDBTabs,
-    MDBTabsItem,
-    MDBTabsLink,
-    MDBTabsContent,
-    MDBTabsPane,
-} from "mdb-react-ui-kit";
-import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
-import { faTrashCan } from '@fortawesome/free-regular-svg-icons';
+import { useEffect, useState } from "react";
+import { Link, useNavigate } from "react-router-dom";
+import { Tabs } from 'react-bootstrap';
+import Tab from 'react-bootstrap/Tab';
 
-export default function Admin() {
+const Admin = () => {
+    const [devices, setDevices] = useState([]);
+    
+    const token = "eyJ4NXQiOiJNR0l4TTJFM05UaG1NRFprTkdZd1l6SmhaR1F5WkRRMVltUTFOamxoWVdZd01HVmxZelpqT0RabVptTXhOak5oWW1Vek56WXhaREJoWWpabVpESTBOUSIsImtpZCI6Ik1HSXhNMkUzTlRobU1EWmtOR1l3WXpKaFpHUXlaRFExWW1RMU5qbGhZV1l3TUdWbFl6WmpPRFptWm1NeE5qTmhZbVV6TnpZeFpEQmhZalptWkRJME5RX1JTMjU2IiwidHlwIjoiYXQrand0IiwiYWxnIjoiUlMyNTYifQ.eyJzdWIiOiI2NDRmODY4Ni03ODQxLTRlOTUtODQ3OC1jY2YyNDIwOWFlOTkiLCJhdXQiOiJBUFBMSUNBVElPTiIsImF1ZCI6IkdZcFk4cnBXRGdJUmxwZmoxb1BmTGJRaGNOUWEiLCJuYmYiOjE2ODAwODM5ODMsImF6cCI6IkdZcFk4cnBXRGdJUmxwZmoxb1BmTGJRaGNOUWEiLCJpc3MiOiJodHRwczpcL1wvYXBpLmFzZ2FyZGVvLmlvXC90XC9vcmdrZm9uZXJlYWN0XC9vYXV0aDJcL3Rva2VuIiwiZXhwIjoxNjgwMDg3NTgzLCJpYXQiOjE2ODAwODM5ODMsImp0aSI6IjlmOTEzY2E4LTI0NWQtNDZiNS1iZDgyLWE1YWFmZWE4OGU4YSIsImNsaWVudF9pZCI6IkdZcFk4cnBXRGdJUmxwZmoxb1BmTGJRaGNOUWEifQ.icRwdmeUumAGlsGPzz2SZ8qeSarrdXJDdXtepBCOtJztB9vCY_uFkH1rYjtKcsY80raTuw3QXGYdSYZUCS5pPjHBydTMGzinoCJz07AthfEfHE0RckqxXOTanPwNuFsozszVhqfxEV7sHdUMtEs_uFXp72iCXpalZjhJ9txLjC8tTiJrq4GFOJuJavu0JKS7ZvMnr_fB-WN43BvwiQBLm_gJiS06GLUq5T4gb1Gcnz2KLh2J1PkeYVBHW3IZNACxmpjAFIaiAcGDJR1xri9niVWh6tFqSNr0WgGwhiZAgu6QIFqIny6a7V_XODLA_jQGUEv8ts9-NzdqSnVO4vxRMw";
     useEffect(() => {
-        document.title = "Admin | PetStore"
-    }, []);
-
-    const [iconsActive, setIconsActive] = useState('pill1');
-
-    const handleIconsClick = (value) => {
-        if (value === iconsActive) {
-            return;
-        }
-
-        setIconsActive(value);
-    };
+    fetch('https://eff16ae0-0cfd-4eb1-83a9-6e69411bef74-prod.e1-us-east-azure.choreoapis.dev/aqiw/kfonechoreointegration/1.0.0/orders', {
+      method: "GET",
+      headers: {"Authorization": `Bearer ${token}`},
+      Accept: 'application/json', 
+     
+       }).then((res) => res.json())
+       .then((data) => {
+        setDevices(data);
+        }).catch((err) => {
+            console.log(err.message);
+        })
+  },[]);
     return (
-        <>
-
-            <section className="h-100 h-custom pt-1" style={{ backgroundColor: "#eee" }}>
-
-                <MDBTabs pills className='mb-3 mt-3'>
-                    <MDBTabsItem>
-                        <MDBTabsLink onClick={() => handleIconsClick('pill1')} active={iconsActive === 'pill1'}>
-                            <MDBIcon fas icon='chart-pie' className='me-2' /> Devices 
-                        </MDBTabsLink>
-                    </MDBTabsItem>
-                    <MDBTabsItem>
-                        <MDBTabsLink onClick={() => handleIconsClick('pill2')} active={iconsActive === 'pill2'}>
-                            <MDBIcon fas icon='chart-line' className='me-2' /> Dashboards
-                        </MDBTabsLink>
-                    </MDBTabsItem>
-                    <MDBTabsItem>
-                        <MDBTabsLink onClick={() => handleIconsClick('pill3')} active={iconsActive === 'pill3'}>
-                            <MDBIcon fas icon='cogs' className='me-2' /> Manage Users
-                        </MDBTabsLink>
-                    </MDBTabsItem>
-                    <div className="d-flex justify-content-end" >
+        <section className="h-100 h-custom pt-1">
+                <Tabs
+                    defaultActiveKey="profile"
+                    id="fill-tab-example"
+                    className="mb-3"
+                    fill
+                >
+                    <Tab eventKey="home" title="Devices">
+                    <div class="d-flex">
+                        <h2 class="pt-2 pb-3 fw-bold text-uppercase">Manage Your products</h2>
                     </div>
-                </MDBTabs>
-
-                <MDBTabsContent>
-                <h3 class="mb-5 pt-2 text-center fw-bold text-uppercase">Your products</h3>
-                    <MDBTabsPane show={iconsActive === 'pill1'}>
-                        <MDBContainer className="py-5 h-100">
-                            <MDBRow className="justify-content-center align-items-center h-100">
-                                <MDBCol md="10">
-                                    <div className="d-flex justify-content-between align-items-center mb-4">
-
+                    {devices.map((product) => (
+                            <div className="product" style={{ width: "31%" }} key={product.Name} contenteditable="true">
+                                <div class="image-box">
+                                    <div class="images" style={{ backgroundImage: "url(" + product.ProductImage + ")", backgroundSize: "contain" }}>
                                     </div>
-
-                                    <MDBCard className="rounded-3 mb-4">
-                                        <MDBCardBody className="p-4">
-                                            
-                                            <MDBRow className="justify-content-between align-items-center">
-                                                <MDBCol md="2" lg="2" xl="2">
-                                                    <MDBCardImage className="rounded-3" fluid
-                                                        src="https://mdbcdn.b-cdn.net/img/Photos/new-templates/bootstrap-shopping-carts/img1.webp"
-                                                        alt="Cotton T-shirt" />
-                                                </MDBCol>
-                                                <MDBCol md="3" lg="3" xl="3">
-                                                    <p className="lead fw-normal mb-2" contenteditable="true">Basic T-shirt</p>
-                                                    <p>
-                                                        <span className="text-muted">Manufacturer: </span>M{" "} <br/>
-                                                        <span className="text-muted">Color: </span>Grey
-                                                    </p>
-                                                </MDBCol>
-                                                <MDBCol md="3" lg="1" xl="2"
-                                                    className="d-flex align-items-center justify-content-around">
-                                                    <MDBTypography tag="h5" className="p-3" contenteditable="true">
-                                                        2
-                                                    </MDBTypography>
-
-                                                </MDBCol>
-                                                <MDBCol md="3" lg="2" xl="2" className="offset-lg-1">
-                                                    <MDBTypography tag="h5" className="mb-0" contenteditable="true">
-                                                        $499.00
-                                                    </MDBTypography>
-                                                </MDBCol>
-                                                <MDBCol md="1" lg="1" xl="1" className="text--center">
-                                                    <FontAwesomeIcon icon={faTrashCan} />
-                                                </MDBCol>
-                                            </MDBRow>
-                                        </MDBCardBody>
-                                    </MDBCard>
-
-                                    <MDBCard className="rounded-3 mb-4">
-                                        <MDBCardBody className="p-4">
-                                        <MDBRow className="justify-content-between align-items-center">
-                                                <MDBCol md="2" lg="2" xl="2">
-                                                    <MDBCardImage className="rounded-3" fluid
-                                                        src="https://mdbcdn.b-cdn.net/img/Photos/new-templates/bootstrap-shopping-carts/img1.webp"
-                                                        alt="Cotton T-shirt" />
-                                                </MDBCol>
-                                                <MDBCol md="3" lg="3" xl="3">
-                                                    <p className="lead fw-normal mb-2" contenteditable="true">Basic T-shirt</p>
-                                                    <p>
-                                                        <span className="text-muted">Manufacturer: </span>M{" "} <br/>
-                                                        <span className="text-muted">Color: </span>Grey
-                                                    </p>
-                                                </MDBCol>
-                                                <MDBCol md="3" lg="1" xl="2"
-                                                    className="d-flex align-items-center justify-content-around">
-                                                    <MDBTypography tag="h5" className="p-3" contenteditable="true">
-                                                        2
-                                                    </MDBTypography>
-
-                                                </MDBCol>
-                                                <MDBCol md="3" lg="2" xl="2" className="offset-lg-1">
-                                                    <MDBTypography tag="h5" className="mb-0" contenteditable="true">
-                                                        $499.00
-                                                    </MDBTypography>
-                                                </MDBCol>
-                                                <MDBCol md="1" lg="1" xl="1" className="text--center">
-                                                    <FontAwesomeIcon icon={faTrashCan} />
-                                                </MDBCol>
-                                            </MDBRow>
-                                        </MDBCardBody>
-                                    </MDBCard>
-
-                                    <MDBCard className="rounded-3 mb-4">
-                                        <MDBCardBody className="p-4">
-                                        <MDBRow className="justify-content-between align-items-center">
-                                                <MDBCol md="2" lg="2" xl="2">
-                                                    <MDBCardImage className="rounded-3" fluid
-                                                        src="https://mdbcdn.b-cdn.net/img/Photos/new-templates/bootstrap-shopping-carts/img1.webp"
-                                                        alt="Cotton T-shirt" />
-                                                </MDBCol>
-                                                <MDBCol md="3" lg="3" xl="3">
-                                                    <p className="lead fw-normal mb-2" contenteditable="true">Basic T-shirt</p>
-                                                    <p>
-                                                        <span className="text-muted">Manufacturer: </span>M{" "} <br/>
-                                                        <span className="text-muted">Color: </span>Grey
-                                                    </p>
-                                                </MDBCol>
-                                                <MDBCol md="3" lg="1" xl="2"
-                                                    className="d-flex align-items-center justify-content-around">
-                                                    <MDBTypography tag="h5" className="p-3" contenteditable="true">
-                                                        2
-                                                    </MDBTypography>
-
-                                                </MDBCol>
-                                                <MDBCol md="3" lg="2" xl="2" className="offset-lg-1">
-                                                    <MDBTypography tag="h5" className="mb-0" contenteditable="true">
-                                                        $499.00
-                                                    </MDBTypography>
-                                                </MDBCol>
-                                                <MDBCol md="1" lg="1" xl="1" className="text--center">
-                                                    <FontAwesomeIcon icon={faTrashCan} />
-                                                </MDBCol>
-                                            </MDBRow>
-                                        </MDBCardBody>
-                                    </MDBCard>
-                                </MDBCol>
-                            </MDBRow>
-                        </MDBContainer>
-                    </MDBTabsPane>
-                    <MDBTabsPane show={iconsActive === 'pill2'}>Tab 2 content</MDBTabsPane>
-                    <MDBTabsPane show={iconsActive === 'pill3'}>Tab 3 content</MDBTabsPane>
-                </MDBTabsContent>
+                                </div>
+                                <h2 className="item">{product.Name}</h2>
+                                <p className="description">{product.Description}</p>
+                                <p className="price" contenteditable="true">$ {product.Price}.00</p>
+                                <p className="price" contenteditable="true">{product.Manufacturer}</p>
+                            </div>
+                        ))}
+                    </Tab>
+                    <Tab eventKey="services" title="Services">
+                        <h1>Services</h1>
+                        <h2 class="d-flex" >Coming soon</h2>
+                    </Tab>
+                    <Tab eventKey="services" title="Services">
+                        <h1>Services</h1>
+                        <h2 class="d-flex" >Coming soon</h2>
+                    </Tab>
+                </Tabs>
             </section>
-        </>
+        // <div className="container">
+        //     <div className="card">
+        //         <div className="card-title">
+        //             <h2>Device Listing</h2>
+        //         </div>
+        //         <div className="card-body">
+        //             <div className="divbtn">
+        //                 <Link to="employee/create" className="btn btn-success">Add New (+)</Link>
+        //             </div>
+        //             <table className="table table-bordered">
+        //                 <thead className="bg-dark text-white">
+        //                     <tr>
+        //                         <td>Name</td>
+        //                         <td>Price</td>
+        //                         <td>Description</td>
+        //                         <td>Manufacturer</td>
+        //                     </tr>
+        //                 </thead>
+        //                 <tbody>
+
+        //                     {devices &&
+        //                         devices.map(item => (
+        //                             <tr key={item.Name}>
+        //                                 <td>{item.Name}</td>
+        //                                 <td>{item.Price}</td>
+        //                                 <td>{item.Description}</td>
+        //                                 <td>{item.Manufacturer}</td>
+        //                                 {/* <td><a onClick={() => { LoadEdit(item.id) }} className="btn btn-success">Edit</a>
+        //                                     <a onClick={() => { Removefunction(item.id) }} className="btn btn-danger">Remove</a>
+        //                                     <a onClick={() => { LoadDetail(item.id) }} className="btn btn-primary">Details</a>
+        //                                 </td> */}
+        //                             </tr>
+        //                         ))
+        //                     }
+
+        //                 </tbody>
+
+        //             </table>
+        //         </div>
+        //     </div>
+        // </div>
     );
 }
+
+export default Admin;
