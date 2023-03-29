@@ -208,7 +208,7 @@ function Application() {
   return (
     <div className="App">
       {
-        state.isAuthenticated && basicUserDetails?.groups.includes("admin_group") 
+        state.isAuthenticated && basicUserDetails?.groups?.includes("admin_group") 
           ? (
             <div>
               {/* <button onClick={() => signOut()}>Logout</button> */}
