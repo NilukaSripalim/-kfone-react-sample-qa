@@ -7,7 +7,7 @@
  *   herein in any form is strictly forbidden, unless permitted by WSO2 expressly.
  *   You may not alter or remove any copyright or other notice from copies of this content.
  */
-import React  from 'react';
+import React from 'react';
 import ReactDOM from 'react-dom/client';
 import './index.css';
 import Application from './App';
@@ -24,30 +24,30 @@ const root = ReactDOM.createRoot(document.getElementById('root'));
 //             baseUrl: "https://dev.api.asgardeo.io/t/asekatest1",
 //             scope: [ "openid","profile" ]
 //   };
-  
-  //const auth = new AuthProvider(authConfig);
 
-  const Index = () => (
-    <AuthProvider
-        config={ {
-            signInRedirectURL: "https://localhost:3000",
-            signOutRedirectURL: "https://localhost:3000",
-            clientID: "HCfqUuf0C0e3DF0ha848_rtDvCca",
-            baseUrl: "https://api.asgardeo.io/t/newprod",
-            scope: [ "openid","profile","groups" ]
-        } }
-        
-    >
-      <Application />  { /* Rest of your application.  */ }
-     
-    </AuthProvider>
+//const auth = new AuthProvider(authConfig);
+
+const Index = () => (
+  <AuthProvider
+    config={{
+      signInRedirectURL: "https://localhost:3000",
+      signOutRedirectURL: "https://localhost:3000",
+      clientID: "jYSWP821dojVDf0OVKVwN9qxJKca",
+      baseUrl: "https://api.asgardeo.io/t/orgkfonereact",
+      scope: ["openid", "profile", "groups"]
+    }}
+
+  >
+    <Application />  { /* Rest of your application.  */}
+
+  </AuthProvider>
 );
 
-  root.render(
-    <Index/>
-  );
-  
-  
+root.render(
+  <Index />
+);
+
+
 
 // If you want to start measuring performance in your app, pass a function
 // to log results (for example: reportWebVitals(console.log))
