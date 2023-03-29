@@ -36,7 +36,7 @@ const RightLoginSignupMenu = () => {
     menu =  <>
       <Nav>
       <Nav.Link href="#deets"><FontAwesomeIcon icon={faUser} /></Nav.Link>
-        <li style={{minWidth:"16vw", marginTop:"10px"}}>Hello! <span>{state.username}</span></li>
+        <li style={{minWidth:"16vw", marginTop:"10px"}}><strong>Hello! </strong> <span>{state.username}</span></li>
         {/* <span>{state.username}</span> */}
       <button  className="reg" onClick={() => signOut()}>Logout</button>
 
