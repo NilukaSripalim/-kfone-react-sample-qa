@@ -35,8 +35,11 @@ const RightLoginSignupMenu = () => {
   if (state.isAuthenticated) {
     menu =  <>
       <Nav>
-      <button onClick={() => signOut()}>Logout</button>
       <Nav.Link href="#deets"><FontAwesomeIcon icon={faUser} /></Nav.Link>
+        <li style={{minWidth:"16vw", marginTop:"10px"}}><strong>Hello! </strong> <span>{state.username}</span></li>
+        {/* <span>{state.username}</span> */}
+      <button  className="reg" onClick={() => signOut()}>Logout</button>
+
       </Nav>
     </>
   } else {
