@@ -14,7 +14,7 @@ import { faThumbsUp as regThumbsUp } from '@fortawesome/free-regular-svg-icons';
 import { faThumbsUp as solidThumbsUp } from '@fortawesome/free-solid-svg-icons';
 import './styles.css'
 // import PetStoreNav from '../../App.js';
-import data from './data.json';
+import data from '../../assets/data/data.json';
 import { FlexboxGrid } from 'rsuite';
 import { contains } from 'rsuite/esm/DOMHelper';
 // Component to render the item list

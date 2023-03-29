@@ -96,6 +96,10 @@
     text-transform: uppercase;
     margin: 0.2em auto;
   }
+
+  .item{
+    padding-top: 5%;
+  }
   
   .item, .price {
     clear: left;
