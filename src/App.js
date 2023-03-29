@@ -211,18 +211,12 @@ function Application() {
         state.isAuthenticated && basicUserDetails?.groups?.includes("admin_group") 
           ? (
             <div>
-              {/* <button onClick={() => signOut()}>Logout</button> */}
               <App/>
             </div>
           ):
           state.isAuthenticated ?
           (
             <div>
-              <ul>
-                <li>{JSON.stringify(state)}</li>
-              </ul>
-
-              {/* <button onClick={() => signOut()}>Logout</button> */}
               <AppCustomer/>
             </div>
           ):<AppNav/>
