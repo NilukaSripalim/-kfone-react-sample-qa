@@ -186,7 +186,7 @@ const AppNav = () => {
 function Application() {
 
   const { state, signIn, signOut, userInfo , groups,getBasicUserInfo } = useAuthContext();
-  const [basicUserDetails, setBasicUserDetails] = useState(null);
+  const [basicUserDetails, setBasicUserDetails ,isLoading] = useState(null);
   
 
   
@@ -204,25 +204,19 @@ function Application() {
   }).catch((error) => {
       // Handle the error
   })
-  }, []);  
+  }, [state.isAuthenticated]);  
   return (
     <div className="App">
       {
-        state.isAuthenticated && basicUserDetails?.groups.includes("admin_group") 
+        state.isAuthenticated && basicUserDetails?.groups?.includes("admin_group") 
           ? (
             <div>
-              {/* <button onClick={() => signOut()}>Logout</button> */}
               <App/>
             </div>
           ):
           state.isAuthenticated ?
           (
             <div>
-              <ul>
-                <li>{JSON.stringify(state)}</li>
-              </ul>
-
-              {/* <button onClick={() => signOut()}>Logout</button> */}
               <AppCustomer/>
             </div>
           ):<AppNav/>
