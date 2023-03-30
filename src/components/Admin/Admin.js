@@ -6,7 +6,7 @@ import Tab from 'react-bootstrap/Tab';
 const Admin = () => {
     const [devices, setDevices] = useState([]);
     
-    const token = "eyJ4NXQiOiJNR0l4TTJFM05UaG1NRFprTkdZd1l6SmhaR1F5WkRRMVltUTFOamxoWVdZd01HVmxZelpqT0RabVptTXhOak5oWW1Vek56WXhaREJoWWpabVpESTBOUSIsImtpZCI6Ik1HSXhNMkUzTlRobU1EWmtOR1l3WXpKaFpHUXlaRFExWW1RMU5qbGhZV1l3TUdWbFl6WmpPRFptWm1NeE5qTmhZbVV6TnpZeFpEQmhZalptWkRJME5RX1JTMjU2IiwidHlwIjoiYXQrand0IiwiYWxnIjoiUlMyNTYifQ.eyJzdWIiOiI2NDRmODY4Ni03ODQxLTRlOTUtODQ3OC1jY2YyNDIwOWFlOTkiLCJhdXQiOiJBUFBMSUNBVElPTiIsImF1ZCI6IkdZcFk4cnBXRGdJUmxwZmoxb1BmTGJRaGNOUWEiLCJuYmYiOjE2ODAwODM5ODMsImF6cCI6IkdZcFk4cnBXRGdJUmxwZmoxb1BmTGJRaGNOUWEiLCJpc3MiOiJodHRwczpcL1wvYXBpLmFzZ2FyZGVvLmlvXC90XC9vcmdrZm9uZXJlYWN0XC9vYXV0aDJcL3Rva2VuIiwiZXhwIjoxNjgwMDg3NTgzLCJpYXQiOjE2ODAwODM5ODMsImp0aSI6IjlmOTEzY2E4LTI0NWQtNDZiNS1iZDgyLWE1YWFmZWE4OGU4YSIsImNsaWVudF9pZCI6IkdZcFk4cnBXRGdJUmxwZmoxb1BmTGJRaGNOUWEifQ.icRwdmeUumAGlsGPzz2SZ8qeSarrdXJDdXtepBCOtJztB9vCY_uFkH1rYjtKcsY80raTuw3QXGYdSYZUCS5pPjHBydTMGzinoCJz07AthfEfHE0RckqxXOTanPwNuFsozszVhqfxEV7sHdUMtEs_uFXp72iCXpalZjhJ9txLjC8tTiJrq4GFOJuJavu0JKS7ZvMnr_fB-WN43BvwiQBLm_gJiS06GLUq5T4gb1Gcnz2KLh2J1PkeYVBHW3IZNACxmpjAFIaiAcGDJR1xri9niVWh6tFqSNr0WgGwhiZAgu6QIFqIny6a7V_XODLA_jQGUEv8ts9-NzdqSnVO4vxRMw";
+    const token = ""; // Update token before running the app.
     useEffect(() => {
     fetch('https://eff16ae0-0cfd-4eb1-83a9-6e69411bef74-prod.e1-us-east-azure.choreoapis.dev/aqiw/kfonechoreointegration/1.0.0/orders', {
       method: "GET",
@@ -23,7 +23,7 @@ const Admin = () => {
     return (
         <section className="h-100 h-custom pt-1">
                 <Tabs
-                    defaultActiveKey="profile"
+                    defaultActiveKey="home"
                     id="fill-tab-example"
                     className="mb-3"
                     fill
@@ -42,15 +42,17 @@ const Admin = () => {
                                 <p className="description">{product.Description}</p>
                                 <p className="price" contenteditable="true">$ {product.Price}.00</p>
                                 <p className="price" contenteditable="true">{product.Manufacturer}</p>
+                                <button class="btn btn-primary" type="submit">Update</button>
                             </div>
                         ))}
+                        
                     </Tab>
                     <Tab eventKey="services" title="Services">
                         <h1>Services</h1>
                         <h2 class="d-flex" >Coming soon</h2>
                     </Tab>
-                    <Tab eventKey="services" title="Services">
-                        <h1>Services</h1>
+                    <Tab eventKey="users" title="Manage Users">
+                        <h1>Manage Users</h1>
                         <h2 class="d-flex" >Coming soon</h2>
                     </Tab>
                 </Tabs>

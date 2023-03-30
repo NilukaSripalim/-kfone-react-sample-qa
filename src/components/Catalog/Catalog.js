@@ -58,7 +58,7 @@ const PetItemList = () => {
 
   export default function Catalog() {
     useEffect(() => {
-        document.title = 'PetStore Catalog';
+        document.title = 'Devices Catalog';
       }, []);
     return (
       <>
