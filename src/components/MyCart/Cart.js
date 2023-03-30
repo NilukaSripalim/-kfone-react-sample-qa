@@ -38,7 +38,7 @@ export default function MyCart() {
                    </thead>           
                    <tbody>
                     <tr>
-                    <td>Top Paw® Valentine's Day Single Dog Sweater</td>
+                    <td>Cloud service</td>
                     <td width="120px"><InputGroup>
         <InputGroup.Button onClick={handleMinus}>-</InputGroup.Button>
         <InputNumber className="custom-input-number" value={3} onChange={setValue} />
@@ -49,7 +49,7 @@ export default function MyCart() {
                     </tr>
                     
                     <tr>
-                    <td>Arcadia Trail™ Dog Windbreaker</td>
+                    <td>Iphone 13</td>
                     <td width="120px"><InputGroup>
         <InputGroup.Button onClick={handleMinus}>-</InputGroup.Button>
         <InputNumber className="custom-input-number" value={3} onChange={setValue} />
@@ -62,7 +62,7 @@ export default function MyCart() {
                    </tbody>          
                 </table>
             </Col>
-            <Col className="col-4 bg-primary p-4 text-white rounded-3"><h2>Card Details</h2>
+            <Col className="col-4 bg-secondary p-4 text-white rounded-3"><h2>Card Details</h2>
                 <Form>
                     <Row>
                     <Form.Group className="mb-3" controlId="formNameOnCard">
